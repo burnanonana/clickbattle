@@ -1,0 +1,127 @@
+body {
+    background-color: #000000; /* 검정색 바탕 */
+    color: #ffffff;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.screen {
+    width: 100%;
+    max-width: 450px; /* 모바일 세로 비율 */
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #aaaaaa;
+    margin-bottom: 20px;
+}
+
+.cat-display {
+    width: 100%;
+    max-width: 300px;
+    height: 100%; /* 고정 높이로 설정하여 이미지가 겹쳐 보이도록 처리 */
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative; /* 자식 이미지 위치 기준 */
+}
+
+/* ⭐⭐ 모든 고양이 이미지를 기본적으로 숨깁니다. ⭐⭐ */
+.cat-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지가 잘리지 않고 컨테이너 안에 맞게 표시 */
+    display: none; 
+    transition: opacity 0.3s;
+}
+
+/* ⭐⭐ 'active' 클래스가 있는 고양이만 표시합니다. ⭐⭐ */
+.cat-image.active {
+    display: block;
+    opacity: 1;
+}
+
+.info-box p {
+    margin: 5px 0;
+}
+
+/* 게이지 바 스타일 */
+.progress-container {
+    width: 90%;
+    max-width: 300px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%; 
+    background-color: #5c6fff;
+    transition: width 0.3s ease-in-out;
+}
+
+/* 버튼 스타일 */
+#feed-button {
+    background-color: #5c6fff;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px #4257b2;
+}
+
+#feed-button:active {
+    background-color: #4257b2;
+    transform: translateY(2px);
+    box-shadow: 0 2px #4257b2;
+}
+
+#reset-button {
+    background-color: #888;
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* styles.css 파일 수정 */
+
+body {
+    /* ... 기존 스타일 유지 ... */
+    
+    /* ⭐⭐ 더블 탭으로 인한 확대 동작을 비활성화합니다. ⭐⭐ */
+    -ms-touch-action: manipulation; /* IE/Edge */
+    touch-action: manipulation; /* 표준 속성 */
+}

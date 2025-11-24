@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>고양이 키우기</title>
+</head>
+
+<body>
+  <div id="app" class="screen">
+        <header>
+            <h1>고양이 키우기</h1>
+            <p>잔뜩 터치해서 고양이를 키워보세요</p>
+        </header>
+
+        <main>
+            <div class="cat-display">
+                <img id="c1" class="cat-image active" src="./src/c1.png" alt="원시 고양이">
+                <img id="c2-1" class="cat-image" src="./src/c2-1.png" alt="신사 고양이">
+                <img id="c2-2" class="cat-image" src="./src/c2-2.png" alt="K 고양이">
+                <img id="c3-1" class="cat-image" src="./src/c3-1.png" alt="아이돌 고양이">
+                <img id="c3-2" class="cat-image" src="./src/c3-2.png" alt="외계 고양이">
+                <img id="c4-1" class="cat-image" src="./src/c4-1.png" alt="??? 고양이">
+                <img id="c4-2" class="cat-image" src="./src/c4-2.png" alt="고숭이">
+            </div>
+            
+            <div class="info-box">
+                <p>현재 단계: <span id="current-stage">1단계</span></p>
+                <p>고양이 이름: <span id="cat-name">원시 고양이</span></p>
+            </div>
+
+            <div id="progress-container" class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <button id="feed-button">고양이 밥주기!</button>
+            
+            <button id="reset-button" class="hidden">다시 키우기</button>
+        </main>
+    </div>
+  
+    <script type="module" src="./src/main.js"></script>
+    <script src="https://clickbattle2025.web.app/click-battle.js"></script>
+</body>
+
+</html>
