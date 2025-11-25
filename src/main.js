@@ -3,6 +3,7 @@ ClickBattle.init("Kate"); // 자기 닉네임
 // --- 고양이 데이터 설정 (파일 이름은 ID로 사용하기 위해 확장자(.png)를 제거합니다.) ---
 // ⭐ 목표 클릭 수를 설정합니다. (클릭 유도 핵심)
 const CAT_STAGES = {
+    ClickBattle.recordClick();
     1: { name: "원시 고양이", fileId: "c1", targetClicks: 20 }, 
     2: [
         { name: "신사 고양이", fileId: "c2-1", targetClicks: 40 },
@@ -36,6 +37,7 @@ let currentCatData = null;
 
 // 현재 단계에 맞는 고양이 데이터와 클릭 목표를 가져오는 함수
 function getStageData(stage) {
+    ClickBattle.recordClick();
     const stageData = CAT_STAGES[stage];
     if (Array.isArray(stageData)) {
         // 2, 3, 4단계: 랜덤으로 하나 선택
@@ -46,6 +48,7 @@ function getStageData(stage) {
 
 // 화면을 업데이트하고 고양이 이미지를 변경하는 함수
 function updateUI() {
+    ClickBattle.recordClick();
     const data = currentCatData;
     
     // 1. ⭐ 이미지 변경 로직 ⭐
@@ -80,6 +83,7 @@ function updateUI() {
 }
 
 function evolveCat() {
+    ClickBattle.recordClick();
     if (currentStage >= 4) return;
     
     currentStage += 1;
@@ -114,6 +118,7 @@ function evolveCat() {
 
 // 밥주기 버튼 클릭 이벤트 핸들러 (클릭 유도)
 function handleFeed() {
+    ClickBattle.recordClick();
     if (currentStage >= 4) return; 
 
     currentClicks += 1;
@@ -128,6 +133,7 @@ function handleFeed() {
 
 // 리셋 버튼 이벤트 핸들러도 수정합니다.
 function handleReset() {
+    ClickBattle.recordClick();
     currentStage = 1;
     currentClicks = 0;
     currentCatData = getStageData(1);
@@ -147,5 +153,3 @@ resetButton.addEventListener('click', handleReset);
 // 1단계 고양이로 초기 설정 및 UI 업데이트
 currentCatData = getStageData(1);
 updateUI();
-
-ClickBattle.recordClick();
