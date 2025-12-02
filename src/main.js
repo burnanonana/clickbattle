@@ -1,14 +1,14 @@
 // --- 고양이 데이터 설정 (파일 이름은 ID로 사용하기 위해 확장자(.png)를 제거합니다.) ---
 // ⭐ 목표 클릭 수를 설정합니다. (클릭 유도 핵심)
 const CAT_STAGES = {
-    1: { name: "원시 고양이", fileId: "c1", targetClicks: 20 }, 
+    1: { name: "원시 고양이", fileId: "c1", targetClicks: 40 }, 
     2: [
-        { name: "신사 고양이", fileId: "c2-1", targetClicks: 40 },
-        { name: "K 고양이", fileId: "c2-2", targetClicks: 40 }
+        { name: "신사 고양이", fileId: "c2-1", targetClicks: 70 },
+        { name: "K 고양이", fileId: "c2-2", targetClicks: 70 }
     ],
     3: [
-        { name: "아이돌 고양이", fileId: "c3-1", targetClicks: 60 },
-        { name: "외계 고양이", fileId: "c3-2", targetClicks: 60 }
+        { name: "아이돌 고양이", fileId: "c3-1", targetClicks: 100 },
+        { name: "외계 고양이", fileId: "c3-2", targetClicks: 100 }
     ],
     4: [ // 4단계는 엔딩이므로 targetClicks가 없습니다.
         { name: "??? 고양이", fileId: "c4-1" },
